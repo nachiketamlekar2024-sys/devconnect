@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo:6.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin_password
+      MONGO_INITDB_DATABASE: dev-connect_dev
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: mongodb://admin:admin_password@db:27017/dev-connect_dev?authSource=admin
+      PORT: 3001
+      NODE_ENV: development
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: http://localhost:3001
+
+volumes:
+  mongodata:

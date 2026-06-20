@@ -1,0 +1,15 @@
+{
+  "name": "dev-connect",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DevConnect is a freelance marketplace that connects clients with skilled developers, providing a platform for job postings, bids, contracts, and secure escrow payments. The platform streamlines the process of finding and hiring top talent, while ensuring timely and secure payments. By leveraging DevConnect, clients can focus on their projects, while developers can focus on delivering high-quality work.",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "install": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
