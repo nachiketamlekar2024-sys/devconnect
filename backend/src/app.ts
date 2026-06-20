@@ -1,7 +1,5 @@
-import mongoose from 'mongoose';
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  google_oauth_id: String
+import express from 'express';
+const router = express.Router();
+router.get('/api/homepage', (req, res) => {
+  res.json({ message: 'Homepage data' });
 });
-const User = mongoose.model('User', userSchema);

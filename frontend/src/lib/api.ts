@@ -100,4 +100,12 @@ export async function postRatings(data: Record<string, unknown>) {
   return response.data;
 }
 
+// ─── Homepage ─────────────────────────────
+
+/** Get Homepage Data */
+export async function getHomepage() {
+  const response = await api.get('/api/homepage');
+  return response.data;
+}
+
 export default api;

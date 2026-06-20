@@ -70,6 +70,7 @@ Frontend: http://localhost:5173
 | POST | `/api/payments` | Make Payment for Contract | ✅ |
 | GET | `/api/payments` | Get All Payments for User | ✅ |
 | POST | `/api/ratings` | Leave Rating and Review for Contract | ✅ |
+| GET | `/api/homepage` | Get Homepage Data | — |
 
 ## Database Schema
 
@@ -123,6 +124,14 @@ Frontend: http://localhost:5173
 | rating | Number |
 | review | String |
 
+### homepages
+| Field | Type |
+|---|---|
+| _id | ObjectId |
+| title | String |
+| description | String |
+| image | String |
+
 ## Screens
 
 - **🔒 Login** — email input, password input, login button, google login button
@@ -133,6 +142,7 @@ Frontend: http://localhost:5173
 - **💳 Payment** — payment method selection, payment amount input, payment button
 - **⭐️ Rating and Review** — rating input, review input, submit button
 - **🔍 Admin Dashboard** — user management table, dispute resolution button
+- **🏠 Homepage** — hero section, featured jobs, call to action button
 
 ## Effort Estimation
 
